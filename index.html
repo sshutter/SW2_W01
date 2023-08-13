@@ -49,10 +49,15 @@
             <form>
               <div class="mb-3">
                 <label for="company" class="form-label">Company</label>
-                <input type="text" class="form-control" id="company" />
+                <input
+                  type="text"
+                  class="form-control"
+                  id="company"
+                  placeholder="Company Name"
+                />
               </div>
               <div class="mb-3">
-                <label for="boot-size" class="form-label">Boot Size</label>
+                <label for="boot-size" class="form-label">Boot size</label>
                 <select id="boot-size" class="form-control">
                   <option selected>Please select boot size</option>
                   <option value="10x10">10 x 10 Ft.</option>
@@ -62,24 +67,39 @@
               <div class="mb-3 form-check">
                 <input type="checkbox" class="form-check-input" id="table" />
                 <label class="form-check-label" for="table">
-                  Request Table
+                  Request for tables
                 </label>
               </div>
               <div class="mb-3">
                 <label for="chairs" class="form-label">Number of chairs</label>
-                <input type="text" class="form-control" id="chairs" />
+                <input
+                  type="text"
+                  class="form-control"
+                  id="chairs"
+                  placeholder="Quantity"
+                />
               </div>
               <div class="mb-3">
                 <label for="contactName" class="form-label">
-                  Contact's Name
+                  Contact's name
                 </label>
-                <input type="text" class="form-control" id="contactName" />
+                <input
+                  type="text"
+                  class="form-control"
+                  id="contactName"
+                  placeholder="Name"
+                />
               </div>
               <div class="mb-3">
                 <label for="contactNumber" class="form-label">
-                  Contact's Number
+                  Contact's number
                 </label>
-                <input type="text" class="form-control" id="contactNumber" />
+                <input
+                  type="text"
+                  class="form-control"
+                  id="contactNumber"
+                  placeholder="Telephone Number"
+                />
               </div>
             </form>
           </div>
@@ -91,7 +111,9 @@
             >
               Close
             </button>
-            <button type="button" class="btn btn-dark">Register</button>
+            <button type="button" class="btn btn-dark" onclick="validate()">
+              Register
+            </button>
           </div>
         </div>
       </div>

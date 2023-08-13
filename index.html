@@ -17,6 +17,7 @@
       integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
       crossorigin="anonymous"
     ></script>
+    <script src="register.js"></script>
     <title>Gadget Expo</title>
   </head>
 
@@ -48,18 +49,20 @@
           <div class="modal-body">
             <form>
               <div class="mb-3">
-                <label for="company" class="form-label">Company</label>
+                <label for="companyNameStr" class="form-label">Company</label>
                 <input
                   type="text"
                   class="form-control"
-                  id="company"
+                  id="companyNameStr"
                   placeholder="Company Name"
                 />
               </div>
               <div class="mb-3">
-                <label for="boot-size" class="form-label">Boot size</label>
-                <select id="boot-size" class="form-control">
-                  <option selected>Please select boot size</option>
+                <label for="bootSizeInt" class="form-label">Boot size</label>
+                <select id="bootSizeInt" class="form-control" required>
+                  <option selected disabled value="">
+                    Please select boot size
+                  </option>
                   <option value="10x10">10 x 10 Ft.</option>
                   <option value="10x15">10 x 15 Ft.</option>
                 </select>
@@ -80,40 +83,38 @@
                 />
               </div>
               <div class="mb-3">
-                <label for="contactName" class="form-label">
+                <label for="contactNameStr" class="form-label">
                   Contact's name
                 </label>
                 <input
                   type="text"
                   class="form-control"
-                  id="contactName"
+                  id="contactNameStr"
                   placeholder="Name"
                 />
               </div>
               <div class="mb-3">
-                <label for="contactNumber" class="form-label">
+                <label for="contactNumberStr" class="form-label">
                   Contact's number
                 </label>
                 <input
                   type="text"
                   class="form-control"
-                  id="contactNumber"
+                  id="contactNumberStr"
                   placeholder="Telephone Number"
                 />
               </div>
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+              >
+                Close
+              </button>
+              <button type="submit" class="btn btn-dark" onclick="validate()">
+                Register
+              </button>
             </form>
-          </div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-dismiss="modal"
-            >
-              Close
-            </button>
-            <button type="button" class="btn btn-dark" onclick="validate()">
-              Register
-            </button>
           </div>
         </div>
       </div>

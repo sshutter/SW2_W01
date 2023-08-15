@@ -22,7 +22,7 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand navbar-dark bg-dark">
       <a class="navbar-brand px-3" href="#">Gadget Expo</a>
       <div class="collapse navbar-collapse">
         <ul class="navbar-nav ml-auto">
@@ -47,15 +47,21 @@
             <h3 class="modal-title fs-5">Register</h3>
           </div>
           <div class="modal-body">
-            <form>
+            <form class="custom-validation" novalidate>
               <div class="mb-3">
-                <label for="companyNameStr" class="form-label">Company</label>
+                <label for="companyNameStr" class="form-label">
+                  Company's name
+                </label>
                 <input
                   type="text"
                   class="form-control"
                   id="companyNameStr"
                   placeholder="Company's Name"
+                  required
                 />
+                <div class="invalid-feedback">
+                  Please provide the company's name
+                </div>
               </div>
               <div class="mb-3">
                 <label for="bootSizeInt" class="form-label">Boot size</label>
@@ -66,23 +72,28 @@
                   <option value="10x10">10 x 10 Ft.</option>
                   <option value="10x15">10 x 15 Ft.</option>
                 </select>
+                <div class="invalid-feedback">Please enter boot size</div>
               </div>
               <div class="mb-3 form-check">
-                <input type="checkbox" class="form-check-input" id="table" />
-                <label class="form-check-label" for="table">
-                  Request for tables
-                </label>
+                <input type="checkbox" class="form-check-input" id="tables" />
+                <label for="tables"> Request for tables </label>
               </div>
               <div class="mb-3">
-                <label for="chairsQuantityInt" class="form-label"
-                  >Number of chairs</label
-                >
+                <label for="chairsQuantityInt" class="form-label">
+                  Number of chairs
+                </label>
                 <input
-                  type="text"
+                  type="number"
                   class="form-control"
                   id="chairsQuantityInt"
                   placeholder="Quantity"
+                  min="1"
+                  max="10"
+                  required
                 />
+                <div class="invalid-feedback">
+                  Please enter the number of chairs only 1-10.
+                </div>
               </div>
               <div class="mb-3">
                 <label for="contactNameStr" class="form-label">
@@ -93,7 +104,11 @@
                   class="form-control"
                   id="contactNameStr"
                   placeholder="Contact's Name"
+                  required
                 />
+                <div class="invalid-feedback">
+                  Please enter the contact's name
+                </div>
               </div>
               <div class="mb-3">
                 <label for="contactNumberStr" class="form-label">
@@ -104,7 +119,11 @@
                   class="form-control"
                   id="contactNumberStr"
                   placeholder="Telephone Number"
+                  required
                 />
+                <div class="invalid-feedback">
+                  Please enter the contact's number
+                </div>
               </div>
               <button
                 type="button"
@@ -113,9 +132,7 @@
               >
                 Close
               </button>
-              <button type="submit" class="btn btn-dark" onclick="validate()">
-                Register
-              </button>
+              <button type="submit" class="btn btn-dark">Register</button>
             </form>
           </div>
         </div>

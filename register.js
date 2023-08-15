@@ -1,18 +1,26 @@
-const validate = () => {
-  let companyNameStr = document.getElementById("companyNameStr");
-  let contactNameStr = document.getElementById("contactNameStr");
-  let contactNumberStr = document.getElementById("contactNumberStr");
-  let chairsQuantityInt = document.getElementById("chairsQuantityInt");
-
-  if (companyNameStr.value === "") {
-    alert("Please insert the company's name");
-  } else if (contactNameStr.value === "") {
-    alert("Please insert the contact's name");
-  } else if (contactNumberStr.value === "") {
-    alert("Please insert the contact's number");
-  }
-
-  if (chairsQuantityInt.value < 1 || chairsQuantityInt > 10) {
-    alert("Please enter the number of chairs only 1-10.");
-  }
-};
+(function () {
+  "use strict";
+  window.addEventListener(
+    "load",
+    function () {
+      // Fetch all the forms we want to apply custom Bootstrap validation styles to
+      var forms = document.getElementsByClassName("custom-validation");
+      // Loop over them and prevent submission
+      var validation = Array.prototype.filter.call(forms, function (form) {
+        form.addEventListener(
+          "submit",
+          function (event) {
+            console.log(form.checkValidity());
+            if (form.checkValidity() === false) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+            form.classList.add("was-validated");
+          },
+          false
+        );
+      });
+    },
+    false
+  );
+})();
